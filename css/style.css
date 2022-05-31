@@ -47,7 +47,7 @@ header {
 
 .carritoImg:hover {
     transition: 1ms;
-    filter: drop-shadow(3px 5px 10px #ff004e);
+    filter: drop-shadow(0px 0px 5px #ff004e);
 }
 
 .contenedorBuscar {
@@ -469,6 +469,7 @@ footer {
     font-weight: bold;
     text-shadow:1px 1px 1px black;
     cursor: pointer;
+    z-index: 1;
 }
 
 .accesos:hover {
