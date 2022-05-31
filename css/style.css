@@ -348,15 +348,23 @@ footer {
     display: flex;
     height: fit-content;
     font-size: 0.7rem;
+    margin-top: -4.5rem;
+    margin-bottom: 4.5rem;
 }
 
 .menuProducto button {
     margin-left: 0.5rem;
 }
 
-.menuProducto a {
+.imgProducto {
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0rem;
+}
+
+.nombreProducto {
     color: white;
-    margin: -4.5rem 0.1rem 0rem 0.1rem;
+    margin: auto 0.1rem 1rem 0.1rem;
 }
 
 .separador {
@@ -371,7 +379,7 @@ footer {
 
 .menuGeneral a {
     color: white;
-    margin: 6.5rem 0.1rem 0rem 0.1rem;
+    margin: auto 0.1rem 0rem 0.1rem;
 }
 
 .botonEliminar {
@@ -388,7 +396,7 @@ footer {
     box-shadow: 0.1px 0.1px 5px #c5c5c5,
                 -0.1px -0.1px 5px #ffffff;
     font-weight: bold;
-    margin-top: -4.5rem;
+    margin-top: 0rem;
     letter-spacing: 0.01rem;
 }
    
@@ -487,3 +495,4 @@ footer {
     transition: 1ms;
     filter: drop-shadow(0px 0px 2px #ff004e);
 }
+

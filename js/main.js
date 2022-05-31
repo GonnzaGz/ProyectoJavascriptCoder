@@ -15,7 +15,7 @@ const usarCarrito = (estadoInicial)=> {
                 privado = {...privado, carrito: [...privado.carrito, producto]};
                 return producto;
             }else{
-                console.error("no se encontro el producto")
+                console.error("no se encontro el producto");
             }
             
         },
@@ -258,69 +258,76 @@ function renderTipo({productosTipo, filtro}){
 
 }
 
-
+const clickProductos = (e)=> {
+    const {target} = e;
+    if(target.classList.contains("btnTarjeta")){
+        let id = parseInt(target.id);
+        inicializacionCarrito.agregaralCarrito(id);
+        console.log(inicializacionCarrito.carrito);
+    }
+}
+contenedor.addEventListener("click", clickProductos);
 
 
 const carrito = document.querySelector("#carritoCompras");
 carrito.addEventListener("click",(e)=>{
     e.preventDefault();
-    const div1 = document.createElement("div");
-    div1.classList.add("menuC");
+    // const div1 = document.createElement("div");
+    // div1.classList.add("menuC");
 
-    const div2 = document.createElement("div");
-    div2.classList.add("separador");
-    div2.id="separador";
+    // const div2 = document.createElement("div");
+    // div2.classList.add("separador");
+    // div2.id="separador";
 
-    const div3 = document.createElement("div");
-    div3.classList.add("menuGeneral");
+    // const div3 = document.createElement("div");
+    // div3.classList.add("menuGeneral");
 
-    const a1 = document.createElement("a");
+    // const a1 = document.createElement("a");
+    // a1.classList.add("total");
+    // a1.textContent = "Total:";
 
-    const a2 = document.createElement("a");
+    // const a2 = document.createElement("a");
+    // a2.classList.add("precioTotal");
+    // a2.textContent = "$ ------------";
 
-    const button1 = document.createElement("button");
+    // const button1 = document.createElement("button");
+    // button1.classList.add("botonCompar");
+    // button1.textContent = "COMPRAR";
 
-    const button2 = document.createElement("button");
+    // const button2 = document.createElement("button");
+    // button2.classList.add("botonVaciar");
+    // button2.textContent = "VACIAR CARRITO";
 
-    carrito.appendChild(div1);
-    div1.appendChild(div2);
+    // carrito.appendChild(div1);
+    // div1.appendChild(div2);
     
-    div1.appendChild(div3);
-    div3.appendchild(a1);
-    div3.appendchild(a2);
-    div3.appendChild(button1);
-    div3.appendChild(button2);
+    // div1.appendChild(div3);
+    // div3.appendchild(a1);
+    // div3.appendchild(a2);
+    // div3.appendChild(button1);
+    // div3.appendChild(button2);
 
     carrito.innerHTML = `
     <div class="menuC">
         <div id="separador" class="separador">
+        ${inicializacionCarrito.carrito.map((elm)=>{
+            return` 
             <div class="menuProducto">
-                <span><img src="" alt=""></span>
-                <a href="">producto</a>
-                <a href="">$</a>
-                <a href="">cantidad</a>
+                <img class="nombreproducto imgProducto" src="${elm.imagen}" alt="">
+                <a class="nombreProducto" href="">${elm.nombre}</a>
+                <a class="nombreProducto" href="">$${elm.precio}</a>
+                <a class="nombreProducto" href="">${elm.cantidad}</a>
                 <button class="botonEliminar">X</button>
-            </div>
+            </div>`
+        }).join("")}
+            
         </div>
         <div class="menuGeneral">
-            <a href="">Total:</a>
-            <a href="">$ ------------</a>
+            <a class="total" href="">Total:</a>
+            <a class="precioTotal" href="">>$ ------------</a>
             <button class="botonComprar">COMPRAR</button>
             <button class="botonVaciar">VACIAR CARRITO</button>
         </div>
     </div>
     `
 });
-
-
-
-const handleButtonBuyClick = (e)=> {
-    const {target} = e;
-    if(target.classList.contains("btnTarjeta")){
-        let id = parseInt(target.id)
-        inicializacionCarrito.agregaralCarrito(id)
-        console.log(inicializacionCarrito.carrito)
-    }
-}
-contenedor.addEventListener("click", handleButtonBuyClick )
-
