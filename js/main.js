@@ -193,7 +193,6 @@ function precios({productosPrecios, tipo, opcion}){
                 <div class="contenedorTarjeta">
                     <img class="imgTarjeta" src="${itemProducto.imagen}" alt="">
                     <h2 class="nombreTarjeta">${itemProducto.nombre}</h2>
-                    <p class="catTarjeta">Categoria: ${itemProducto.categoria}</p>
                     <p class="precioTarjeta">$${itemProducto.precio}</p>
                     <button id="${itemProducto.id}" class="btnTarjeta">COMPRAR</button>
                 </div>`
